@@ -1,0 +1,10 @@
+﻿{
+
+  "ConnectionStrings": {
+    "BlogDataContext": "Server=(localdb)\\mssqllocaldb;Database=BlogAnime1;Trusted_Connection=True;",
+    "IdentityDataContext": "Server=(localdb)\\mssqllocaldb;Database=BlogAnime1_Identity;Trusted_Connection=True;"
+  },
+  "FeatureToggles": {
+    "EnableDeveloperExceptions": true
+  }
+}

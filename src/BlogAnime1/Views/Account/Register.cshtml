@@ -1,0 +1,44 @@
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@model BlogAnime1.Models.Account.RegisterViewModel
+
+
+@{
+    Layout = "_Layout";
+}
+
+
+    <h1>New User Registration</h1>
+
+    <br />
+
+    <form role="form" asp-action="Register">
+        <div asp-validation-summary="All" ></div>
+        
+            <div>
+                    <label asp-for="EmailAddress"></label>
+                    <input type="email" asp-for="EmailAddress" />
+                    <span asp-validation-for="EmailAddress"></span>
+               
+            </div>
+
+            <div>
+                     <label asp-for="Password"></label>
+                     <input type="password" asp-for="Password" />
+                     <span asp-validation-for="Password"></span>
+                    
+                    
+</div>
+
+            <div class="form-group">
+                <label asp-for="ConfirmPassword"></label>
+                <input type="password" asp-for="ConfirmPassword" />
+                <span asp-validation-for="ConfirmPassword"></span>
+            </div>
+            <br />
+            <div>
+                <label>&nbsp;</label>
+                <button type="submit" class="btn btn-primary">Create new user</button>
+            </div>
+        </table>
+    </form>
+

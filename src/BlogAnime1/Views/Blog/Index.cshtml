@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<BlogAnime1.Models.Post>
+@{
+    Layout = "_Layout";
+}
+
+    @if (ViewBag.HasPreviousPage)
+    {
+        <a class="prev" href="@Url.Action("Index", "Blog", new { page = ViewBag.PreviousPage })">
+            Previous
+        </a>
+    }
+ &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+    @if (ViewBag.HasNextPage)
+    {
+        <a class="next" href="@Url.Action("Index", "Blog", new { page = ViewBag.NextPage })">
+                                                 Next 
+        </a>
+    }
+     
+
+<div >
+    @foreach (var post in Model)
+    {
+        @Html.Partial("_Partial", post)
+    }
+</div>

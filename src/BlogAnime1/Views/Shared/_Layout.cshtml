@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html>
+<head lang="en-US">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="~/kate1.css"/>
+    <script type="text/javascript" src="~/scripts/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="~/scripts/site.js"></script>
+</head>
+<body>
+    <p id="header"></p>
+    <a href="/Home/Index" class="first">Home</a>
+    <a href="/Blog/Index" class="second">Blog</a>
+    <a  href="/Contact/Index" class="third">Contact</a>
+           @if (User.Identity.IsAuthenticated)
+        {
+            <form id="logout" action="@Url.Action("Logout", "Account")" method="POST">
+                <a href="javascript: $('#logout').submit()"  class="fifth">
+                    Logout
+                   
+                </a>
+            </form>
+        }
+        else
+        {
+            <a href="@Url.Action("Login", "Account")" title="log in" class="fourth">
+                Login
+            </a>
+        }
+    
+
+  
+
+    <div id="sideBar">
+      
+    </div>
+
+    <div id="content">
+       
+            @RenderBody()
+       
+       
+        <p>
+            <a href="/Blog/Create" class="BlogCreation">Create a new Blog</a>
+
+        </p>
+
+    </div>
+
+
+
+    
+
+
+
+    <footer>
+        <center>&copy; MANOJ VARMA    @DateTime.Now.Year</center><br/>
+        <center>All the images belong to their respectful owners . I don't own any rights on them.</center>
+    </footer>
+
+
+</body>
+</html>
